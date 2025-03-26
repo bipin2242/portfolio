@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 body {
   transition: background 0.3s, color 0.3s;
@@ -15,7 +15,7 @@ body {
 /* Header & Navigation */
 header {
   background: linear-gradient(135deg, #2c3e50, #34495e);
-  padding: 20px;
+  padding: 15px; /* Reduced from 20px for mobile */
   color: white;
   text-align: center;
   position: sticky;
@@ -27,13 +27,13 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px; /* Reduced from 30px */
 }
 nav ul li a {
   color: #ecf0f1;
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 15px;
+  padding: 8px 12px; /* Slightly smaller padding */
   border-radius: 20px;
   transition: background 0.3s, color 0.3s;
 }
@@ -41,24 +41,15 @@ nav ul li a:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav ul li {
-    margin: 10px 0;
-  }
-}
 
 /* Dark Mode Button */
 #darkModeToggle {
   position: absolute;
-  top: 15px;
-  right: 25px;
+  top: 12px; /* Adjusted for smaller header */
+  right: 15px; /* Reduced from 25px */
   background: none;
   border: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Slightly smaller */
   cursor: pointer;
   color: #ecf0f1;
   transition: transform 0.3s;
@@ -69,32 +60,31 @@ nav ul li a:hover {
 
 /* Sections */
 section {
-  padding: 80px 20px;
+  padding: 60px 15px; /* Reduced from 80px 20px */
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
 }
-h1,
-h2 {
+h1, h2 {
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced from 20px */
   color: #34495e;
 }
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Reduced from 2.5rem */
   letter-spacing: 1px;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem; /* Reduced from 2rem */
 }
 .btn {
-  padding: 12px 25px;
+  padding: 10px 20px; /* Reduced from 12px 25px */
   background: #e74c3c;
   color: white;
   text-decoration: none;
   border-radius: 25px;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 10px; /* Reduced from 15px */
   font-weight: 500;
   transition: background 0.3s, transform 0.3s;
 }
@@ -107,11 +97,11 @@ h2 {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
+  gap: 20px; /* Reduced from 30px */
+  margin-top: 15px; /* Reduced from 20px */
 }
 .project-card {
-  padding: 25px;
+  padding: 20px; /* Reduced from 25px */
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -130,24 +120,22 @@ label {
   color: #34495e;
   font-weight: 500;
 }
-textarea,
-input {
+textarea, input {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 12px;
+  margin: 8px 0; /* Reduced from 10px */
+  padding: 10px; /* Reduced from 12px */
   border: 2px solid #ddd;
   border-radius: 10px;
   font-size: 1rem;
   transition: border-color 0.3s;
 }
-textarea:focus,
-input:focus {
+textarea:focus, input:focus {
   border-color: #e74c3c;
   outline: none;
 }
 button {
-  padding: 12px 25px;
+  padding: 10px 20px; /* Reduced from 12px 25px */
   background: #e74c3c;
   color: white;
   border: none;
@@ -161,38 +149,40 @@ button:hover {
   transform: translateY(-3px);
 }
 
-/* Social Links (LinkedIn) */
+/* Social Links */
 .social-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+  margin-top: 15px; /* Reduced from 20px */
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced from 15px */
 }
-.linkedin-link, .facebook-link, .email-link {
+.linkedin-link, .email-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  background: #0077b5; /* LinkedIn blue */
+  padding: 8px 15px; /* Reduced from 10px 20px */
   color: white;
   text-decoration: none;
   border-radius: 25px;
   font-weight: 500;
   transition: background 0.3s, transform 0.3s;
 }
-.linkedin-link i, .facebook-link i, .email-link {
-  font-size: 1.5rem;
+.linkedin-link {
+  background: #0077b5;
 }
-.linkedin-link:hover, .facebook-link:hover {
+.linkedin-link:hover {
   background: #005f91;
   transform: translateY(-3px);
 }
 .email-link {
-    background: #00bfa5; /* Teal for email */
+  background: #00bfa5;
 }
 .email-link:hover {
-    background: #009688;
-    transform: translateY(-3px);
+  background: #009688;
+  transform: translateY(-3px);
+}
+.linkedin-link i, .email-link i {
+  font-size: 1.3rem; /* Reduced from 1.5rem */
 }
 
 /* Dark Mode */
@@ -203,30 +193,25 @@ button:hover {
 .dark-mode header {
   background: linear-gradient(135deg, #1f2a44, #2c3e50);
 }
-.dark-mode h1,
-.dark-mode h2 {
+.dark-mode h1, .dark-mode h2 {
   color: #ecf0f1;
 }
 .dark-mode .project-card {
   background: #2c3e50;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.dark-mode .btn,
-.dark-mode button {
+.dark-mode .btn, .dark-mode button {
   background: #e74c3c;
 }
-.dark-mode .btn:hover,
-.dark-mode button:hover {
+.dark-mode .btn:hover, .dark-mode button:hover {
   background: #c0392b;
 }
-.dark-mode textarea,
-.dark-mode input {
+.dark-mode textarea, .dark-mode input {
   border-color: #444;
   background: #333;
   color: #ecf0f1;
 }
-.dark-mode textarea:focus,
-.dark-mode input:focus {
+.dark-mode textarea:focus, .dark-mode input:focus {
   border-color: #e74c3c;
 }
 .dark-mode .linkedin-link {
@@ -235,17 +220,70 @@ button:hover {
 .dark-mode .linkedin-link:hover {
   background: #005f91;
 }
-
-.dark-mode .facebook-link {
-  background: #0077b5;
-}
-.dark-mode .facebook-link:hover {
-  background: #005f91;
-}
-
 .dark-mode .email-link {
-    background: #00bfa5;
+  background: #00bfa5;
 }
 .dark-mode .email-link:hover {
-    background: #009688;
+  background: #009688;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets and smaller */
+  h1 {
+      font-size: 1.8rem;
+  }
+  h2 {
+      font-size: 1.5rem;
+  }
+  section {
+      padding: 40px 10px; /* Further reduced */
+  }
+  .project-grid {
+      grid-template-columns: 1fr; /* Single column */
+      gap: 15px;
+  }
+  .btn, button {
+      padding: 8px 15px;
+  }
+  nav ul {
+      gap: 15px;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
+  h1 {
+      font-size: 1.5rem;
+  }
+  h2 {
+      font-size: 1.3rem;
+  }
+  section {
+      padding: 30px 10px;
+  }
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+  #darkModeToggle {
+      top: 10px;
+      right: 10px;
+      font-size: 1.2rem;
+  }
+  .social-links {
+      flex-direction: column; /* Stack social links */
+      gap: 10px;
+  }
+  .linkedin-link, .email-link {
+      padding: 8px 12px;
+      width: 100%; /* Full width for consistency */
+      max-width: 250px; /* Limit width */
+      justify-content: center;
+  }
+  textarea, input {
+      padding: 8px;
+  }
+  #about p {
+      font-size: 0.95rem; /* Slightly smaller text */
+  }
 }
