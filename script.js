@@ -48,3 +48,18 @@ typeWriter();
 //   e.preventDefault();
 //   alert("Message sent! (This is a demo)");
 // });
+
+(function() {
+  emailjs.init("rRZJMpc1iV93fjQ3v"); 
+})();
+
+function sendMail(event) {
+  event.preventDefault();
+
+  emailjs.sendForm("service_bgskdee", "template_sdqzgkw", event.target)
+  .then(() => {
+      alert("Message sent successfully!");
+  }, (error) => {
+      alert("Failed to send message: " + error.text);
+  });
+}
