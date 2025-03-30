@@ -44,7 +44,7 @@ function typeWriter() {
 typeWriter();
 
 // Form submission (demo)
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Message sent! (This is a demo)");
-});
+// document.querySelector("form").addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   alert("Message sent! (This is a demo)");
+// });
