@@ -1,75 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Poppins font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button id="darkModeToggle">🌙</button></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="darkModeToggle">🌙</button></li>
+        </ul>
+      </nav>
     </header>
-    
+
     <section id="home">
-        <h1>Hi, I'm <span class="typewriter"></span></h1>
-        <p>A Computer Science graduate passionate about web development and software quality assurance.</p>
-        <a href="#projects" class="btn">View Projects</a>
+      <h1>Hi, I'm <span class="typewriter"></span></h1>
+      <p>
+        A Computer Science graduate passionate about web development and
+        software quality assurance.
+      </p>
+      <a href="#projects" class="btn">View Projects</a>
     </section>
-    
+
     <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I’m Bipin Sharma, a web developer with a passion for crafting clean, user-friendly digital experiences. I specialize in front-end development, using HTML, CSS, and JavaScript to bring ideas to life. With a keen eye for design and a love for problem-solving, I’ve worked on projects ranging from responsive portfolios to interactive web applications.</p>
-        
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m Bipin Sharma, a web developer with a passion for crafting clean,
+        user-friendly digital experiences. I specialize in front-end
+        development, using HTML, CSS, and JavaScript to bring ideas to life.
+        With a keen eye for design and a love for problem-solving, I’ve worked
+        on projects ranging from responsive portfolios to interactive web
+        applications.
+      </p>
     </section>
-    
+
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Personal Portfolio</h3>
-                <p>A responsive portfolio site showcasing my skills and projects. Features a dark mode toggle, smooth scrolling, and a typewriter effect, built with HTML, CSS, and JavaScript. Hosted on Vercel.</p>
-                <a href="https://github.com/bipin2242/portfolio" target="_blank" class="btn">To the project</a>
-            </div>
-            <div class="project-card">Project 2</div>
-            <div class="project-card">Project 3</div>
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Personal Portfolio</h3>
+          <p>
+            A responsive portfolio site showcasing my skills and projects.
+            Features a dark mode toggle, smooth scrolling, and a typewriter
+            effect, built with HTML, CSS, and JavaScript. Hosted on Vercel.
+          </p>
+          <a
+            href="https://github.com/bipin2242/portfolio"
+            target="_blank"
+            class="btn"
+            >To the project</a
+          >
         </div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+      </div>
     </section>
-    
+
     <section id="contact">
-        <h2>Contact Me</h2>
-        <form onsubmit="sendMail(event)">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Your Name" required>
-            <label for="email">Your Email</label>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <label for="message">Your Message</label>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="linkedin-link">
-                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-            </a>
-            <a href="mailto:sharmabipin024@gmail.com" class="email-link">
-                <i class="fas fa-envelope"></i> Email Me
-            </a>
-        </div>
-        <div></div>
+      <h2>Contact Me</h2>
+      <form onsubmit="sendMail(event)">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Your Email" required />
+        <label for="message">Your Message</label>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/your-profile"
+          target="_blank"
+          class="linkedin-link"
+        >
+          <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        </a>
+        <a href="mailto:sharmabipin024@gmail.com" class="email-link">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+      </div>
+      <div></div>
     </section>
-</body>
+  </body>
 </html>
