@@ -81,11 +81,11 @@
       <h2>Contact Me</h2>
       <form onsubmit="sendMail(event)">
         <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="name" placeholder="Your Name" name="user-name" required />
         <label for="email">Your Email</label>
-        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="email" id="email" placeholder="Your Email" name="user-email" required />
         <label for="message">Your Message</label>
-        <textarea id="message" placeholder="Your Message" required></textarea>
+        <textarea id="message" placeholder="Your Message" name="message" required></textarea>
         <button type="submit">Send</button>
       </form>
       <div class="social-links">
