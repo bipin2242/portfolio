@@ -303,3 +303,14 @@ button:hover {
       font-size: 0.95rem; /* Slightly smaller text */
   }
 }
+
+.dark-mode .project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #5e9bd8;
+}
+.dark-mode .project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #e2dfdf;
+}
