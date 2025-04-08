@@ -18,10 +18,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Link to the main JavaScript file, using the 'defer' attribute to ensure it runs after the HTML is parsed -->
     <script defer src="script.js"></script>
+    <!-- EmailJS CDN for handling form submissions -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body>
+    <!-- Header section containing the navigation menu -->
     <header>
       <nav>
         <ul>
@@ -29,20 +32,26 @@
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!-- Dark mode toggle button -->
           <li><button id="darkModeToggle">🌙</button></li>
         </ul>
       </nav>
     </header>
 
+    <!-- Home section -->
     <section id="home">
+      <!-- Main heading with a typewriter effect -->
       <h1>Hi, I'm <span class="typewriter"></span></h1>
+      <!-- Short introduction -->
       <p>
         A Computer Science graduate passionate about web development and
         software quality assurance.
       </p>
+      <!-- Button to view projects -->
       <a href="#projects" class="btn">View Projects</a>
     </section>
 
+    <!-- About Me section -->
     <section id="about">
       <h2>About Me</h2>
       <p>
@@ -55,9 +64,12 @@
       </p>
     </section>
 
+    <!-- Projects section -->
     <section id="projects">
       <h2>Projects</h2>
+      <!-- Grid container for projects -->
       <div class="project-grid">
+        <!-- Project card -->
         <div class="project-card">
           <h3>Personal Portfolio</h3>
           <p>
@@ -77,8 +89,10 @@
       </div>
     </section>
 
+    <!-- Contact section -->
     <section id="contact">
       <h2>Contact Me</h2>
+      <!-- Contact form -->
       <form onsubmit="sendMail(event)">
         <label for="name">Your Name</label>
         <input
@@ -105,6 +119,7 @@
         ></textarea>
         <button type="submit">Send</button>
       </form>
+      <!-- Social links -->
       <div class="social-links">
         <a
           href="https://www.linkedin.com/in/bipinsharma24/"

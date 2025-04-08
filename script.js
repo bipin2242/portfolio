@@ -1,52 +1,60 @@
-// Smooth scrolling
+// Smooth scrolling: Selects all anchor links that start with # and adds a smooth scrolling effect when clicked.
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevents the default jump behavior
     document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
+      behavior: "smooth", // Applies smooth scrolling
     });
   });
 });
 
-// Dark mode toggle
-const toggleButton = document.getElementById("darkModeToggle");
+// Dark mode toggle: Toggles dark mode on and off by adding/removing the 'dark-mode' class to the body.
+const toggleButton = document.getElementById("darkModeToggle"); // Gets the dark mode toggle button
 toggleButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  const isDark = document.body.classList.contains("dark-mode");
-  toggleButton.textContent = isDark ? "☀️" : "🌙";
-  localStorage.setItem("darkMode", isDark);
+  // Adds a click event listener to the toggle button
+  document.body.classList.toggle("dark-mode"); // Toggles the 'dark-mode' class on the body
+  const isDark = document.body.classList.contains("dark-mode"); // Checks if dark mode is currently enabled
+  toggleButton.textContent = isDark ? "☀️" : "🌙"; // Updates the button text based on the dark mode state
+  localStorage.setItem("darkMode", isDark); // Saves the dark mode state to local storage
 });
-// Initial state
+// Initial state: Sets the initial dark mode state based on the value in local storage.
 try {
+  // Attempts to retrieve the dark mode state from local storage
   toggleButton.textContent =
-    localStorage.getItem("darkMode") === "true" ? "☀️" : "🌙";
+    localStorage.getItem("darkMode") === "true" ? "☀️" : "🌙"; // Sets the button text based on the stored dark mode state
   if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
+    // If dark mode was previously enabled
+    document.body.classList.add("dark-mode"); // Adds the 'dark-mode' class to the body
   }
 } catch (e) {
-  console.error("Error accessing localStorage:", e);
+  // If there's an error accessing local storage (e.g., in some browsers with privacy settings)
+  console.error("Error accessing localStorage:", e); // Logs the error to the console
 }
-toggleButton.setAttribute("aria-label", "Toggle dark mode");
+toggleButton.setAttribute("aria-label", "Toggle dark mode"); // Sets an aria-label for accessibility
 
-// Typewriter effect
-const textElement = document.querySelector(".typewriter");
-const text = "Bipin Sharma";
-let index = 0;
+// Typewriter effect: Implements a typewriter effect for the main heading.
+const textElement = document.querySelector(".typewriter"); // Gets the element with the class 'typewriter'
+const text = "Bipin Sharma"; // The text to be typed
+let index = 0; // The current index of the text
 
 function typeWriter() {
+  // The typewriter function
   if (index < text.length) {
-    textElement.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, 100);
+    // If the index is less than the length of the text
+    textElement.innerHTML += text.charAt(index); // Adds the next character to the element
+    index++; // Increments the index
+    setTimeout(typeWriter, 100); // Calls the function again after 100ms
   } else {
+    // If the index is equal to the length of the text
     setTimeout(() => {
-      textElement.innerHTML = "";
-      index = 0;
-      typeWriter();
+      // After 2 seconds
+      textElement.innerHTML = ""; // Clears the text
+      index = 0; // Resets the index
+      typeWriter(); // Calls the function again to restart the effect
     }, 2000); // Restart after 2 seconds
   }
 }
-typeWriter();
+typeWriter(); // Starts the typewriter effect
 
 // Form submission (demo)
 // document.querySelector("form").addEventListener("submit", (e) => {
@@ -54,19 +62,24 @@ typeWriter();
 //   alert("Message sent! (This is a demo)");
 // });
 
+// EmailJS: Initializes EmailJS with the user ID.
 (function () {
-  emailjs.init("rRZJMpc1iV93fjQ3v");
+  emailjs.init("rRZJMpc1iV93fjQ3v"); // Initializes EmailJS with the user ID
 })();
 
+// sendMail: Sends the form data using EmailJS.
 function sendMail(event) {
-  event.preventDefault();
+  // The sendMail function
+  event.preventDefault(); // Prevents the default form submission
 
   emailjs.sendForm("service_bgskdee", "template_sdqzgkw", event.target).then(
     () => {
-      alert("Message sent successfully!");
+      // If the email is sent successfully
+      alert("Message sent successfully!"); // Alerts the user that the message was sent
     },
     (error) => {
-      alert("Failed to send message: " + error.text);
+      // If there's an error sending the email
+      alert("Failed to send message: " + error.text); // Alerts the user that the message failed to send
     }
   );
 }
