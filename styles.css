@@ -186,7 +186,9 @@ button:hover {
   gap: 10px; /* Reduced from 15px */
 }
 .linkedin-link,
-.email-link {
+.email-link,
+.github-link,
+.facebook-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -211,8 +213,31 @@ button:hover {
   background: #009688;
   transform: translateY(-3px);
 }
+
+/* Github Link */
+.github-link {
+  background: #333; /* Dark background for GitHub */
+}
+
+.github-link:hover {
+  background: #555;
+  transform: translateY(-3px);
+}
+
+/* Facebook Link */
+.facebook-link {
+  background: #1877f2; /* Facebook blue color */
+}
+
+.facebook-link:hover {
+  background: #0d62c7; /* Darker blue on hover */
+  transform: translateY(-3px);
+}
+
 .linkedin-link i,
-.email-link i {
+.email-link i,
+.github-link i,
+.facebook-link i {
   font-size: 1.3rem; /* Reduced from 1.5rem */
 }
 
@@ -267,6 +292,20 @@ button:hover {
   background: #009688;
 }
 
+/* Dark Mode for new links */
+.dark-mode .github-link {
+  background: #333;
+}
+.dark-mode .github-link:hover {
+  background: #555;
+}
+.dark-mode .facebook-link {
+  background: #1877f2;
+}
+.dark-mode .facebook-link:hover {
+  background: #0d62c7;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   /* Tablets and smaller */
@@ -318,7 +357,9 @@ button:hover {
     gap: 10px;
   }
   .linkedin-link,
-  .email-link {
+  .email-link,
+  .github-link,
+  .facebook-link {
     padding: 8px 12px;
     width: 100%; /* Full width for consistency */
     max-width: 250px; /* Limit width */
