@@ -17,11 +17,16 @@ toggleButton.addEventListener("click", () => {
   localStorage.setItem("darkMode", isDark);
 });
 // Initial state
-toggleButton.textContent =
-  localStorage.getItem("darkMode") === "true" ? "☀️" : "🌙";
-if (localStorage.getItem("darkMode") === "true") {
-  document.body.classList.add("dark-mode");
+try {
+  toggleButton.textContent =
+    localStorage.getItem("darkMode") === "true" ? "☀️" : "🌙";
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+  }
+} catch (e) {
+  console.error("Error accessing localStorage:", e);
 }
+toggleButton.setAttribute("aria-label", "Toggle dark mode");
 
 // Typewriter effect
 const textElement = document.querySelector(".typewriter");
