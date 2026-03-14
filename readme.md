@@ -6,7 +6,6 @@ A modern, responsive portfolio website built to showcase my skills, projects, an
 ## Features
 
 -   **Responsive Design**: Adapts seamlessly to different screen sizes, ensuring a consistent user experience across devices.
--   **Dark Mode Toggle**: Allows users to switch between light and dark themes for comfortable viewing in various lighting conditions.
 -   **Smooth Scrolling**: Provides a smooth and engaging navigation experience when clicking on internal links.
 -   **Typewriter Effect**: Adds a dynamic and visually appealing introduction with a typewriter-style animation.
 -   **Contact Form**: Enables visitors to send messages directly through the website using EmailJS.
