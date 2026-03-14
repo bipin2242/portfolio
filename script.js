@@ -2,35 +2,49 @@
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault(); // Prevents the default jump behavior
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth", // Applies smooth scrolling
-    });
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth", // Applies smooth scrolling
+      });
+    }
   });
 });
 
-// Dark mode toggle: Toggles dark mode on and off by adding/removing the 'dark-mode' class to the body.
-const toggleButton = document.getElementById("darkModeToggle"); // Gets the dark mode toggle button
-toggleButton.addEventListener("click", () => {
-  // Adds a click event listener to the toggle button
-  document.body.classList.toggle("dark-mode"); // Toggles the 'dark-mode' class on the body
-  const isDark = document.body.classList.contains("dark-mode"); // Checks if dark mode is currently enabled
-  toggleButton.textContent = isDark ? "☀️" : "🌙"; // Updates the button text based on the dark mode state
-  localStorage.setItem("darkMode", isDark); // Saves the dark mode state to local storage
+// Scroll animation: Add animation class to elements when they come into view
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px"
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("in-view");
+    }
+  });
+}, observerOptions);
+
+// Observe all sections and project cards
+document.querySelectorAll("section, .project-card, .skill-item").forEach(el => {
+  el.classList.add("animate-on-scroll");
+  observer.observe(el);
 });
-// Initial state: Sets the initial dark mode state based on the value in local storage.
-try {
-  // Attempts to retrieve the dark mode state from local storage
-  toggleButton.textContent =
-    localStorage.getItem("darkMode") === "true" ? "☀️" : "🌙"; // Sets the button text based on the stored dark mode state
-  if (localStorage.getItem("darkMode") === "true") {
-    // If dark mode was previously enabled
-    document.body.classList.add("dark-mode"); // Adds the 'dark-mode' class to the body
+
+// Auto dark mode: Automatically applies dark mode based on system preference
+function applySystemTheme() {
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
   }
-} catch (e) {
-  // If there's an error accessing local storage (e.g., in some browsers with privacy settings)
-  console.error("Error accessing localStorage:", e); // Logs the error to the console
 }
-toggleButton.setAttribute("aria-label", "Toggle dark mode"); // Sets an aria-label for accessibility
+
+// Apply theme on page load
+applySystemTheme();
+
+// Listen for system theme changes
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applySystemTheme);
 
 // Typewriter effect: Implements a typewriter effect for the main heading.
 const textElement = document.querySelector(".typewriter"); // Gets the element with the class 'typewriter'
